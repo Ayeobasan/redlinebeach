@@ -65,19 +65,19 @@ export default function Reservation() {
             </p>
 
             {/* Quick Contact */}
-            <div className="space-y-4 mb-8">
-              <h4 className="font-heading font-bold text-dark text-sm uppercase tracking-wider">
+            <div className="space-y-3 mb-6 sm:mb-8">
+              <h4 className="font-heading font-bold text-dark text-xs sm:text-sm uppercase tracking-wider">
                 Or call us directly
               </h4>
               {["08088576938", "08038436727", "08037333389"].map((phone) => (
                 <a
                   key={phone}
                   href={`tel:${phone}`}
-                  className="flex items-center gap-3 p-4 rounded-xl bg-white hover:bg-ocean-50 transition-colors group border border-dark/5"
+                  className="flex items-center gap-3 p-3 sm:p-4 rounded-xl bg-white hover:bg-ocean-50 transition-colors group border border-dark/5"
                 >
-                  <div className="w-10 h-10 rounded-full bg-ocean-900/5 flex items-center justify-center group-hover:bg-ocean-900 transition-colors">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-ocean-900/5 flex items-center justify-center group-hover:bg-ocean-900 transition-colors">
                     <svg
-                      className="w-5 h-5 text-ocean-900 group-hover:text-white transition-colors"
+                      className="w-4 h-4 sm:w-5 sm:h-5 text-ocean-900 group-hover:text-white transition-colors"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -90,19 +90,19 @@ export default function Reservation() {
                       />
                     </svg>
                   </div>
-                  <span className="font-heading font-semibold text-ocean-900">
+                  <span className="font-heading font-semibold text-ocean-900 text-sm sm:text-base">
                     {phone}
                   </span>
                 </a>
               ))}
             </div>
 
-            <div className="p-6 rounded-2xl bg-ocean-900 text-white">
-              <p className="font-accent italic text-aqua-200 text-lg mb-1">
+            <div className="p-4 sm:p-6 rounded-2xl bg-ocean-900 text-white">
+              <p className="font-accent italic text-sand-100 text-base sm:text-lg mb-1">
                 &ldquo;Free Your Mind!&rdquo;
               </p>
-              <p className="text-white/60 text-sm">
-                Let Redline Leisure & Resorts be your next unforgettable escape.
+              <p className="text-white/70 text-xs sm:text-sm">
+                Let Redline Leisure &amp; Resorts be your next unforgettable escape.
               </p>
             </div>
           </div>
@@ -116,10 +116,10 @@ export default function Reservation() {
             }`}
           >
             {submitted ? (
-              <div className="bg-white rounded-2xl shadow-sm border border-dark/5 p-10 text-center">
-                <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-tropical-50 flex items-center justify-center">
+              <div className="bg-white rounded-2xl shadow-sm border border-dark/5 p-6 sm:p-10 text-center">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 rounded-full bg-coral-50 flex items-center justify-center">
                   <svg
-                    className="w-10 h-10 text-tropical-500"
+                    className="w-8 h-8 sm:w-10 sm:h-10 text-coral-500"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -132,15 +132,15 @@ export default function Reservation() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-heading font-bold text-dark mb-2">
+                <h3 className="text-xl sm:text-2xl font-heading font-bold text-dark mb-2">
                   Enquiry Sent!
                 </h3>
-                <p className="text-dark/60 mb-6">
+                <p className="text-dark/60 text-sm sm:text-base mb-6">
                   Thank you for your interest. Our team will contact you shortly.
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="btn-outline"
+                  className="btn-outline text-xs sm:text-sm"
                 >
                   Send Another Enquiry
                 </button>
@@ -148,7 +148,7 @@ export default function Reservation() {
             ) : (
               <form
                 onSubmit={handleSubmit}
-                className="bg-white rounded-2xl shadow-sm border border-dark/5 p-8 md:p-10 space-y-5"
+                className="bg-white rounded-2xl shadow-sm border border-dark/5 p-4 sm:p-7 md:p-10 space-y-4 sm:space-y-5"
               >
                 <h3 className="text-xl font-heading font-bold text-dark mb-2">
                   Make an Enquiry

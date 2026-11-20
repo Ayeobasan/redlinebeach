@@ -59,10 +59,8 @@ export default function Hero() {
           style={{ animationDelay: "0.2s", animationFillMode: "both" }}
         >
           Escape the Ordinary.{" "}
-          <span className="block mt-1">
-            <span className="text-gradient bg-gradient-to-r from-aqua-200 to-tropical-300 bg-clip-text text-transparent">
-              Embrace the Coast.
-            </span>
+          <span className="block mt-1 font-accent italic font-normal text-sand-100">
+            Embrace the Coast.
           </span>
         </h1>
 
@@ -92,13 +90,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-float">
-        <span className="text-white/50 text-xs tracking-widest uppercase">Scroll</span>
-        <div className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-1.5">
-          <div className="w-1.5 h-3 rounded-full bg-white/60 animate-bounce" />
-        </div>
-      </div>
 
       {/* Decorative wave at bottom */}
       <div className="absolute bottom-0 left-0 right-0">

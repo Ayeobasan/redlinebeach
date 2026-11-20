@@ -132,35 +132,35 @@ export default function Pricing() {
     <section
       id="pricing"
       ref={sectionRef}
-      className="section-spacing bg-gradient-sand relative overflow-hidden"
+      className="section-spacing bg-sand-50 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto section-padding">
         {/* Section Header */}
         <div
-          className={`text-center max-w-2xl mx-auto mb-12 transition-all duration-1000 ${
+          className={`text-center max-w-2xl mx-auto mb-8 sm:mb-12 transition-all duration-1000 ${
             isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="w-10 h-[2px] bg-coral-500" />
-            <span className="text-coral-500 text-sm font-heading font-semibold tracking-wider uppercase">
+          <div className="flex items-center justify-center gap-3 mb-4 sm:mb-6">
+            <div className="w-8 sm:w-10 h-[2px] bg-coral-500" />
+            <span className="text-coral-500 text-xs sm:text-sm font-heading font-semibold tracking-wider uppercase">
               Rates &amp; Packages
             </span>
-            <div className="w-10 h-[2px] bg-coral-500" />
+            <div className="w-8 sm:w-10 h-[2px] bg-coral-500" />
           </div>
-          <h2 className="text-section-mobile md:text-section-desktop font-heading font-bold text-dark mb-4 text-balance">
+          <h2 className="text-section-mobile md:text-section-desktop font-heading font-bold text-dark mb-3 text-balance">
             Transparent{" "}
             <span className="font-accent italic text-ocean-900">Pricing</span>
           </h2>
-          <p className="text-dark/60 text-lg leading-relaxed">
+          <p className="text-dark/70 text-sm sm:text-base md:text-lg leading-relaxed">
             Everything you need to plan your perfect visit. All prices in
             Nigerian Naira (₦).
           </p>
         </div>
 
-        {/* Category Tabs */}
+        {/* Category Tabs with mobile-refined wrap and touch targets */}
         <div
-          className={`flex flex-wrap justify-center gap-2 mb-10 transition-all duration-1000 delay-200 ${
+          className={`flex flex-wrap justify-center gap-1.5 sm:gap-2 mb-8 sm:mb-10 transition-all duration-1000 delay-200 ${
             isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
@@ -171,20 +171,20 @@ export default function Pricing() {
               <button
                 key={cat.id}
                 onClick={() => setActiveTab(cat.id)}
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
+                className={`flex items-center gap-1.5 sm:gap-2 px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 ${
                   isActive
                     ? "bg-ocean-900 text-white shadow-md"
-                    : "bg-white text-dark/60 hover:text-dark hover:bg-white/80 border border-dark/5"
+                    : "bg-white text-dark/70 hover:text-dark hover:bg-white/80 border border-dark/5"
                 }`}
               >
-                <TabIcon className={`w-4 h-4 ${isActive ? "text-aqua-200" : "text-ocean-700"}`} />
-                <span className="hidden sm:inline">{cat.title}</span>
+                <TabIcon className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${isActive ? "text-coral-400" : "text-ocean-900"}`} />
+                <span>{cat.title}</span>
               </button>
             );
           })}
         </div>
 
-        {/* Price Table */}
+        {/* Price Table with clean mobile padding */}
         <div
           className={`max-w-3xl mx-auto transition-all duration-1000 delay-300 ${
             isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
@@ -192,36 +192,38 @@ export default function Pricing() {
         >
           <div className="bg-white rounded-2xl shadow-sm overflow-hidden border border-dark/5">
             {/* Header */}
-            <div className="px-8 py-6 bg-ocean-900 text-white">
+            <div className="px-5 py-4 sm:px-8 sm:py-6 bg-ocean-900 text-white">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-aqua-200">
-                  <ActiveIcon className="w-5 h-5" />
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white/10 flex items-center justify-center text-white">
+                  <ActiveIcon className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
-                <h3 className="text-xl font-heading font-bold">
+                <h3 className="text-lg sm:text-xl font-heading font-bold">
                   {activeCategory.title}
                 </h3>
               </div>
             </div>
 
-            {/* Items */}
+            {/* Items with mobile-comfortable padding */}
             <div className="divide-y divide-dark/5">
               {activeCategory.items.map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-center justify-between px-8 py-5 hover:bg-sand-50/50 transition-colors"
+                  className="flex items-center justify-between px-4 py-3.5 sm:px-8 sm:py-5 hover:bg-sand-50/50 transition-colors"
                 >
-                  <div>
-                    <span className="font-medium text-dark">{item.name}</span>
+                  <div className="pr-3">
+                    <span className="font-medium text-dark text-xs sm:text-base">
+                      {item.name}
+                    </span>
                     {item.note && (
-                      <span className="block text-sm text-dark/40 mt-0.5">
+                      <span className="block text-[11px] sm:text-xs text-dark/50 mt-0.5">
                         {item.note}
                       </span>
                     )}
                   </div>
                   <span
-                    className={`font-heading font-bold text-lg ${
+                    className={`font-heading font-bold text-sm sm:text-lg whitespace-nowrap ${
                       item.price === "Free"
-                        ? "text-tropical-500"
+                        ? "text-coral-500"
                         : "text-ocean-900"
                     }`}
                   >

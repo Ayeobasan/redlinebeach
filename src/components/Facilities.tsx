@@ -106,32 +106,32 @@ export default function Facilities() {
       <div className="max-w-7xl mx-auto section-padding">
         {/* Section Header */}
         <div
-          className={`text-center max-w-2xl mx-auto mb-16 transition-all duration-1000 ${
+          className={`text-center max-w-2xl mx-auto mb-10 sm:mb-16 transition-all duration-1000 ${
             isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="w-10 h-[2px] bg-coral-500" />
-            <span className="text-coral-500 text-sm font-heading font-semibold tracking-wider uppercase">
+          <div className="flex items-center justify-center gap-3 mb-4 sm:mb-6">
+            <div className="w-8 sm:w-10 h-[2px] bg-coral-500" />
+            <span className="text-coral-500 text-xs sm:text-sm font-heading font-semibold tracking-wider uppercase">
               Spaces &amp; Venues
             </span>
-            <div className="w-10 h-[2px] bg-coral-500" />
+            <div className="w-8 sm:w-10 h-[2px] bg-coral-500" />
           </div>
-          <h2 className="text-section-mobile md:text-section-desktop font-heading font-bold text-dark mb-4 text-balance">
+          <h2 className="text-section-mobile md:text-section-desktop font-heading font-bold text-dark mb-3 text-balance">
             Find Your{" "}
             <span className="font-accent italic text-ocean-900">
               Perfect Space
             </span>
           </h2>
-          <p className="text-dark/60 text-lg leading-relaxed">
+          <p className="text-dark/70 text-sm sm:text-base md:text-lg leading-relaxed">
             From intimate cabanas by the surf to versatile event centers for up
             to 150 guests, each space is maintained for your comfort and
             enjoyment.
           </p>
         </div>
 
-        {/* Facilities - Asymmetric & Editorial Layout */}
-        <div className="space-y-12">
+        {/* Facilities - Asymmetric & Editorial Layout with mobile-optimized padding */}
+        <div className="space-y-6 sm:space-y-8 md:space-y-12">
           {facilities.map((facility, index) => {
             const isReversed = index % 2 !== 0;
             return (
@@ -147,7 +147,7 @@ export default function Facilities() {
                 <div className="grid lg:grid-cols-12 gap-0 card-elevated border border-dark/5 bg-sand-50/20">
                   {/* Image Column */}
                   <div
-                    className={`relative min-h-[320px] lg:min-h-[420px] overflow-hidden ${
+                    className={`relative min-h-[220px] sm:min-h-[280px] lg:min-h-[420px] overflow-hidden ${
                       isReversed
                         ? "lg:col-span-7 lg:order-2"
                         : "lg:col-span-7 lg:order-1"
@@ -160,38 +160,38 @@ export default function Facilities() {
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                       sizes="(max-width: 1024px) 100vw, 60vw"
                     />
-                    <div className="absolute top-4 left-4 flex gap-2">
-                      <span className="px-3.5 py-1.5 bg-dark/70 backdrop-blur-md text-white text-xs font-semibold rounded-full tracking-wide">
+                    <div className="absolute top-3 left-3 sm:top-4 sm:left-4 flex gap-2">
+                      <span className="px-3 py-1 sm:px-3.5 sm:py-1.5 bg-dark/75 backdrop-blur-md text-white text-[11px] sm:text-xs font-semibold rounded-full tracking-wide">
                         {facility.category}
                       </span>
                       {facility.prices[0].price === "Free" && (
-                        <span className="px-3.5 py-1.5 bg-tropical-500 text-white text-xs font-bold rounded-full tracking-wide shadow-sm">
+                        <span className="px-3 py-1 sm:px-3.5 sm:py-1.5 bg-coral-500 text-white text-[11px] sm:text-xs font-bold rounded-full tracking-wide shadow-sm">
                           FREE SITTING
                         </span>
                       )}
                     </div>
                   </div>
 
-                  {/* Content Column */}
+                  {/* Content Column with clean mobile padding */}
                   <div
-                    className={`p-8 md:p-10 lg:p-12 flex flex-col justify-between ${
+                    className={`p-5 sm:p-7 md:p-10 lg:p-12 flex flex-col justify-between ${
                       isReversed
                         ? "lg:col-span-5 lg:order-1"
                         : "lg:col-span-5 lg:order-2"
                     }`}
                   >
                     <div>
-                      <h3 className="text-2xl md:text-3xl font-heading font-bold text-dark mb-3">
+                      <h3 className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-dark mb-2 sm:mb-3">
                         {facility.name}
                       </h3>
-                      <p className="text-dark/70 leading-relaxed mb-6 text-sm md:text-base">
+                      <p className="text-dark/70 leading-relaxed mb-4 sm:mb-6 text-xs sm:text-sm md:text-base">
                         {facility.description}
                       </p>
 
                       {/* Capacity Pill */}
-                      <div className="flex items-center gap-2 mb-6 text-ocean-900 bg-ocean-50/80 px-4 py-2 rounded-xl w-fit">
-                        <Users className="w-4 h-4 flex-shrink-0" />
-                        <span className="text-xs md:text-sm font-medium">
+                      <div className="flex items-center gap-2 mb-4 sm:mb-6 text-ocean-900 bg-ocean-50/80 px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl w-fit">
+                        <Users className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
+                        <span className="text-xs sm:text-sm font-medium">
                           {facility.capacity}
                         </span>
                       </div>
@@ -199,16 +199,16 @@ export default function Facilities() {
 
                     <div>
                       {/* Price Badges */}
-                      <div className="flex flex-wrap gap-2 mb-6">
+                      <div className="flex flex-wrap gap-2 mb-5 sm:mb-6">
                         {facility.prices.map((p) => (
                           <div
                             key={p.label}
-                            className="px-4 py-2 rounded-xl bg-white border border-sand-200/80 shadow-xs"
+                            className="px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-white border border-sand-200/80 shadow-xs"
                           >
-                            <span className="text-[11px] uppercase tracking-wider text-dark/40 block">
+                            <span className="text-[10px] sm:text-[11px] uppercase tracking-wider text-dark/40 block">
                               {p.label}
                             </span>
-                            <span className="text-base md:text-lg font-heading font-bold text-ocean-900">
+                            <span className="text-sm sm:text-base md:text-lg font-heading font-bold text-ocean-900">
                               {p.price}
                             </span>
                           </div>
@@ -220,10 +220,10 @@ export default function Facilities() {
                         href={`#reservation?space=${encodeURIComponent(
                           facility.name
                         )}`}
-                        className="btn-outline text-xs md:text-sm py-2.5 px-6 inline-flex items-center gap-2"
+                        className="btn-outline text-xs sm:text-sm py-2 px-4 sm:py-2.5 sm:px-6 inline-flex items-center gap-2 w-full sm:w-auto justify-center"
                       >
                         <span>Enquire About {facility.name}</span>
-                        <ArrowRight className="w-4 h-4" />
+                        <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                       </Link>
                     </div>
                   </div>
